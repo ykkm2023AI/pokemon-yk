@@ -2,7 +2,8 @@
 
 <template>
   <div>
-    <h1>あたらしくはじめる</h1>
+    <h1>あたらしくはじめますか？</h1>
+    <p>では　はじめに　きみの　なまえを　おしえて　もらおう！   </p>
     <form @submit.prevent></form>
   </div>
 </template>

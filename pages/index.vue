@@ -2,13 +2,13 @@
 
 <template>
   <div>
-    <h1>ポケットモンスター</h1>
+    <h1>ポケットモンスター風だよ</h1>
     <GamifyList>
       <GamifyItem>
-        <NuxtLink to="/trainer">つづきからはじめる</NuxtLink>
+        <NuxtLink to="/trainer">つづきからはじめるならこっち</NuxtLink>
       </GamifyItem>
       <GamifyItem>
-        <NuxtLink to="/new">あたらしくはじめる</NuxtLink>
+        <NuxtLink to="/new">あたらしくはじめるならこっち</NuxtLink>
       </GamifyItem>
     </GamifyList>
   </div>

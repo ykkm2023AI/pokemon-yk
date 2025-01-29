@@ -13,7 +13,8 @@ router.get("/trainers", async (_req, res, next) => {
   try {
     const trainers = await findTrainers();
     // TODO: 期待するレスポンスボディに変更する
-    res.send(trainers);
+    const response = trainers.map((trainer)=>trainer.Key.split(".")[0]);
+    res.send(response);
   } catch (err) {
     next(err);
   }
