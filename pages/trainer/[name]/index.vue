@@ -86,6 +86,7 @@ const {
       <GamifyItem v-for="pokemon in trainer.pokemons" :key="pokemon.id">
         <img :src="pokemon.sprites.front_default" />
         <span class="pokemon-name">{{ pokemon.nickname || pokemon.name }}</span>
+        <span class="pokemon-date">{{ pokemon.dateAdded }}</span>
         <GamifyButton @click="onOpenNickname(pokemon)"
           >ニックネームをつける</GamifyButton
         >
@@ -154,6 +155,7 @@ const {
         </GamifyItem>
       </GamifyList>
     </GamifyDialog>
+    <br>
     <GamifyButton @click="onRestart"
       >スタート地点に戻る</GamifyButton
     >

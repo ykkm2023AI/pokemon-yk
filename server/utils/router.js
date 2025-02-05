@@ -86,6 +86,9 @@ router.post("/trainer/:trainerName/pokemon", async (req, res, next) => {
       return res.sendStatus(400);
     const pokemon = await findPokemon(req.body.name);
     // TODO: 削除系 API エンドポイントを利用しないかぎりポケモンは保持する
+    //年月日時分秒を取得してデータ配列に追加する  20250205
+    const now = new Date();
+    const formattedDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
     const {
       order,
       name,
@@ -97,7 +100,15 @@ router.post("/trainer/:trainerName/pokemon", async (req, res, next) => {
       order,
       name,
       sprites: { front_default },
+      dateAdded: formattedDate,
     });
+    // trainer.pokemons.push({
+    //   id: (trainer.pokemons[trainer.pokemons.length - 1]?.id ?? 0) + 1,
+    //   nickname: "",
+    //   order,
+    //   name,
+    //   sprites: { front_default },
+    // });
     const result = await upsertTrainer(trainerName, trainer);   //20250205  bug fixed
     res.status(result["$metadata"].httpStatusCode).send(result);
   } catch (err) {

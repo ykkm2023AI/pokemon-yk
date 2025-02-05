@@ -19,6 +19,9 @@ const onSubmit = async () => {
   router.push(`/trainer/${safeTrainerName.value}`);
 };
 const { dialog, onOpen, onClose } = useDialog();
+const onRestart = async () => {
+  router.push("/");
+};
 </script>
 
 <template>
@@ -58,6 +61,10 @@ const { dialog, onOpen, onClose } = useDialog();
         </GamifyItem>
       </GamifyList>
     </GamifyDialog>
+    <br>
+    <GamifyButton @click="onRestart">
+      "スタート地点に戻る"
+    </GamifyButton>
   </div>
 </template>
 
