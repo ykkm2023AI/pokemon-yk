@@ -18,6 +18,9 @@ const onDelete = async () => {
   if (response instanceof Error) return;
   router.push("/");
 };
+const onRestart = async () => {
+  router.push("/");
+}
 const nickname = ref("");
 const onNickname = async (pokemon) => {
   const newTrainer = trainer.value;
@@ -73,7 +76,7 @@ const {
       <span>{{ trainer.name }}</span>
     </div>
     <GamifyButton @click="onOpenDelete(true)"
-      >マサラタウンにかえってトレーナー全削除</GamifyButton
+      >マサラタウンに帰ってこのトレーナーを削除</GamifyButton
     >
     <h2>てもちポケモン</h2>
     <CatchButton :to="`/trainer/${route.params.name}/catch`"
@@ -151,7 +154,10 @@ const {
         </GamifyItem>
       </GamifyList>
     </GamifyDialog>
-  </div>
+    <GamifyButton @click="onRestart"
+      >スタート地点に戻る</GamifyButton
+    >
+</div>
 </template>
 
 <style scoped>
