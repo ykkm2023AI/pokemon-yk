@@ -73,7 +73,7 @@ const {
       <span>{{ trainer.name }}</span>
     </div>
     <GamifyButton @click="onOpenDelete(true)"
-      >マサラタウンにかえる</GamifyButton
+      >マサラタウンにかえってトレーナー全削除</GamifyButton
     >
     <h2>てもちポケモン</h2>
     <CatchButton :to="`/trainer/${route.params.name}/catch`"

@@ -98,7 +98,7 @@ router.post("/trainer/:trainerName/pokemon", async (req, res, next) => {
       name,
       sprites: { front_default },
     });
-    const result = await upsertTrainer(trainerName, { pokemons: [pokemon] });
+    const result = await upsertTrainer(trainerName, trainer);   //20250205  bug fixed
     res.status(result["$metadata"].httpStatusCode).send(result);
   } catch (err) {
     next(err);
